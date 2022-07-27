@@ -1,0 +1,26 @@
+https://packages.ubuntu.com/
+lsb_release -a will tell you distribution code name 
+
+How to search package using apt:
+
+sudo apt-get update  //   Update the cache lists stored in /var/lib/apt/lists
+sudo apt-get upgrade //  Upgrade all software on your system 
+apt-cache search < software/package name >
+apt-cache show < Softwarw name>
+apt-get install < Softwarw name >  // install software 
+
+apt-get remove < Software Name>   // remove software mackage 
+// but above command does not remove the package completely , configuration files are still left over with above command. This command is useful when you want to re insrall the software again with old configuration.
+
+To remove the software along  with configuration file we use 
+
+sudo apt-get purge < Package Namw>  //This command deletes package along with configuration file.
+
+So always use purge command to remove software.
+
+
+Some time for a package to work we need additional package as dependent package. 
+They remain in system even if the packages required additional package is removed.
+Such packages are reoved via command 
+
+sudo apt-get autoremove 
